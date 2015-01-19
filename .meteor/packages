@@ -11,4 +11,6 @@ underscore
 less
 twbs:bootstrap
 accounts-password
-accounts-ui
+iron:router
+useraccounts:bootstrap
+pcel:loading
