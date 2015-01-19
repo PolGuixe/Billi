@@ -14,3 +14,6 @@ accounts-password
 iron:router
 useraccounts:bootstrap
 pcel:loading
+mdg:camera
+mdg:geolocation
+mdg:reload-on-resume
