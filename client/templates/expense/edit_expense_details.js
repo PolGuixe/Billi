@@ -13,7 +13,22 @@ Template.editExpenseDetails.helpers({
 });
 
 Template.editExpenseDetails.events({
-  'submit form':function(){
-    Bills.insert()
+  'submit form':function(e){
+     e.preventDefault();
+    
+    var bill = {
+      userId: user._id,
+//      author: user.username,
+      submitted: new Date(),
+      amount: $(e.target).find('[name=amount]').val(),
+      date: $(e.target).find('[name=date]').val(), //TODO: use a date object.
+      location: $(e.target).find('[name=location]').val(),
+      paymentMethod: $(e.target).find('[name=method]').val(),
+      category: $(e.target).find('[name=category]').val()
+    };
+    
+    Bills.insert(bill);
+    
+    Router.go('bills');
   }
 });
