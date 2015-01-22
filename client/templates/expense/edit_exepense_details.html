@@ -1,0 +1,22 @@
+<template name="editExpenseDetails">
+  <form>
+    <!--  Image thumbnail-->
+    <span>Amount: <input type="text" name="amount" value={{amount}}> </span>
+    <span>Date: <input type="text" name="date" value={{date}}> </span>
+    <span>Location: <input type="text" name="Location" value={{location}}> </span>
+    <span>Payment Method: 
+      <select name="Method">
+        <option value="cash">Cash</option>
+        <option value="card">Card</option>
+      </select> 
+    </span>
+    <span>Category:
+      <select>
+        <option value="M&E">Meals and Entertainment</option>
+        <option value="Hotel">Hotel</option>
+        <option value="Trip">Trip</option>
+      </select>
+    </span>
+    <input type="submit" value="Save">
+  </form>
+</template>
