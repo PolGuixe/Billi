@@ -16,8 +16,8 @@ Template.editExpenseDetails.events({
   'submit form':function(e){
      e.preventDefault();
     
-    var bill = {
-      userId: user._id,
+    var expense = {
+      userId: this.userId,
 //      author: user.username,
       submitted: new Date(),
       amount: $(e.target).find('[name=amount]').val(),
@@ -27,8 +27,8 @@ Template.editExpenseDetails.events({
       category: $(e.target).find('[name=category]').val()
     };
     
-    Bills.insert(bill);
+    Expenses.insert(expense);
     
-    Router.go('bills');
+    Router.go('/expenses');
   }
 });
