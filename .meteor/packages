@@ -10,7 +10,6 @@ insecure
 underscore
 accounts-password
 iron:router
-pcel:loading
 mdg:camera
 mdg:geolocation
 mdg:reload-on-resume
