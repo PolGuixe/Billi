@@ -1,6 +1,10 @@
 <template name="layout">
   <div class="container">
-    {{> header}}
+    {{#unless isCordova}}
+      {{> headerWeb}}
+    {{else}}
+      {{> headerCordova}}
+    {{/unless}}
     <div id="main" class="row-fluid">
       {{#unless currentUser}} 
         {{> signInUp}} 
