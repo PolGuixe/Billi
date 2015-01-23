@@ -1,8 +1,8 @@
-if (Bills.find().count() === 0) {
+if (Expenses.find().count() === 0) {
 
   console.log('Fixture executed');
 
-  Bills.insert({
+  Expenses.insert({
     createdBy: 'Pol',
     dateTime: '15/01/2015 10:00:00 GMT', //TODO: check meteor date package format
     location: [40.3234,20.20202], //TODO: check lat&lon format
@@ -14,7 +14,7 @@ if (Bills.find().count() === 0) {
     OCRData: ''
   });
 
-  Bills.insert({
+  Expenses.insert({
     createdBy: 'Pol',
     dateTime: '15/01/2015 12:00:00 GMT', //TODO: check meteor date package format
     location: [40.3234,20.20202], //TODO: check lat&lon format
@@ -26,7 +26,7 @@ if (Bills.find().count() === 0) {
     OCRData: ''
   });
 
-  Bills.insert({
+  Expenses.insert({
     createdBy: 'Pol',
     dateTime: '15/01/2015 18:00:00 GMT', //TODO: check meteor date package format
     location: [40.3234,20.20202], //TODO: check lat&lon format
