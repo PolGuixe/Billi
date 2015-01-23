@@ -8,11 +8,8 @@ meteor-platform
 autopublish
 insecure
 underscore
-less
-twbs:bootstrap
 accounts-password
 iron:router
-useraccounts:bootstrap
 pcel:loading
 mdg:camera
 mdg:geolocation
