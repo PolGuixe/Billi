@@ -1,7 +1,12 @@
 <template name="layout">
+  {{#ionBody}}
       {{#unless currentUser}} 
         {{> signInUp}} 
-      {{else}} 
-        {{> yield}}
+      {{else}}       
+        {{>ionNavBar}}     
+        {{#ionNavView}}
+          {{> yield}}
+        {{/ionNavView}}
       {{/unless}}
+  {{/ionBody}}
 </template>
