@@ -1,4 +1,4 @@
-//TODO: try to remove this to see what happens. :)
-Meteor.startup(function(){
-  AutoForm.setDefaultTemplate('ionic');
-});
+//TODO: remove this if not using autoform package
+//Meteor.startup(function(){
+//  AutoForm.setDefaultTemplate('ionic');
+//});

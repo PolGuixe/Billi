@@ -1,6 +1,5 @@
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
-
 .take-picture {
   text-align: center;
   vertical-align: middle;
@@ -21,7 +20,19 @@
 }
 
 .edit-picture {
-  img{
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.edit-expense-details {
+  .image-top {
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+  }
+  img {
     width: 100%;
     height: auto;
   }

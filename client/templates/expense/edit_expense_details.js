@@ -8,7 +8,10 @@ Template.editExpenseDetails.helpers({
     return 'Lat: ' + latLon.lat + ', Lon: ' + latLon.lng;
   },
   amount: function(){
-    return '$10'
+    return '$10';
+  },
+  image: function(){
+    return Session.get('image');
   }
 });
 
@@ -20,6 +23,7 @@ Template.editExpenseDetails.events({
       userId: this.userId,
 //      author: user.username,
       submitted: new Date(),
+      merchant:$(e.target).find('[name=merchant]').val(),
       amount: $(e.target).find('[name=amount]').val(),
       date: $(e.target).find('[name=date]').val(), //TODO: use a date object.
       location: $(e.target).find('[name=location]').val(),
