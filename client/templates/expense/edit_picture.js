@@ -5,7 +5,7 @@ Template.editPicture.helpers({
 });
 
 Template.editPicture.events({
-  "click .scan":function(){
+  "click [data-action=scan]":function(){
     Router.go('/edit_expense_details');
   }
 });

@@ -1,5 +1,6 @@
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+
 .take-picture {
   text-align: center;
   vertical-align: middle;
@@ -17,5 +18,11 @@
       font-size: 2em;
     }
   }
-  
+}
+
+.edit-picture {
+  img{
+    width: 100%;
+    height: auto;
+  }
 }

@@ -1,5 +1,21 @@
 <template name="editPicture">
-  <img src={{image}}>
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton text=false}}
+<!--    Also accepts classes e.g. class="button-positive"-->
+  {{/contentFor}}
   
-  <button class="btn-primary scan">Scan</button>
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Select the amount</h1>
+  {{/contentFor}}
+  
+  {{#ionContent}}
+    {{#ionView}}
+      <div class="edit-picture">
+        {{#ionItem}}
+          <img src={{image}}>
+        {{/ionItem}}
+      <button data-action="scan" class="button button-block button-positive">Scan</button>
+    </div>
+    {{/ionView}}
+  {{/ionContent}}
 </template>
