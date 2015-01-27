@@ -7,6 +7,18 @@
         {{#ionNavView}}
           {{> yield}}
         {{/ionNavView}}
+<!--  TODO: check how to change the style of the tabs-->
+        {{#if isAndroid}}
+          {{#ionTabs style="android"}}
+            {{> ionTab title="Profile" path="profile" icon="android-person"}}
+            {{> ionTab title="Expenses" path="expenses" icon="filing"}}
+          {{/ionTabs}}
+        {{else}}
+          {{#ionTabs style="ios"}}
+            {{> ionTab title="Profile" path="profile" icon="ios-person"}} 
+            {{> ionTab title="Expenses" path="expenses" icon="filing"}}
+          {{/ionTabs}}
+        {{/if}}
       {{/unless}}
   {{/ionBody}}
 </template>
