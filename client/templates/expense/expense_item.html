@@ -1,5 +1,12 @@
 <template name="expense">
-  <div class="row">
-    {{amount}}
-  </div>  
+<!--  {{#with expense}} TODO: check this??-->
+  {{#ionItem iconLeft=true iconRight=true}} 
+<!--  TODO: picture thumbnail-->
+    <h2>{{merchant}}</h2>
+    <p>{{amount}}</p>
+    <span class="item-category">
+      {{>ionIcon icon="{{categoryIcon}}"}}
+      {{category}}
+    </span>
+  {{/ionItem}}
 </template>

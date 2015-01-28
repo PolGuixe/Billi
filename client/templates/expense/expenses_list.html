@@ -1,5 +1,25 @@
 <template name="expensesList">
-  {{#each expenses}}
-    {{>expense}}
-  {{/each}}
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+      {{> ionIcon icon='ios-search'}}
+    </button>
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Expenses</h1>
+  {{/contentFor}}
+  
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-left button-positive" data-action="new-expense">
+      {{> ionIcon icon='plus'}}
+    </button>
+  {{/contentFor}}
+  
+  {{#ionView}}
+    {{#ionContent}}
+      {{#each expenses}}
+        {{>expense}}
+      {{/each}}
+    {{/ionContent}}
+  {{/ionView}}
 </template>

@@ -4,6 +4,7 @@ if (Expenses.find().count() === 0) {
 
   Expenses.insert({
     createdBy: 'Pol',
+    merchant: 'McDonalds',
     dateTime: '15/01/2015 10:00:00 GMT', //TODO: check meteor date package format
     location: [40.3234,20.20202], //TODO: check lat&lon format
     category: 'Lunch',
@@ -16,6 +17,7 @@ if (Expenses.find().count() === 0) {
 
   Expenses.insert({
     createdBy: 'Pol',
+    merchant: 'Bokoto',
     dateTime: '15/01/2015 12:00:00 GMT', //TODO: check meteor date package format
     location: [40.3234,20.20202], //TODO: check lat&lon format
     category: 'Dinner',
@@ -28,6 +30,7 @@ if (Expenses.find().count() === 0) {
 
   Expenses.insert({
     createdBy: 'Pol',
+    merchant: 'NH Hotels',
     dateTime: '15/01/2015 18:00:00 GMT', //TODO: check meteor date package format
     location: [40.3234,20.20202], //TODO: check lat&lon format
     category: 'Accomodation',
