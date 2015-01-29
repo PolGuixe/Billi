@@ -14,8 +14,10 @@
         <div class="image-top">
           <img src={{image}}>
         </div>
+        {{> quickForm collection="Expenses" id="expense-new-form" type="insert" omitFields="createdBy,createdAt" buttonContent="Save"}}
 <!--        TODO: check the forms using the autoform package-->
 <!--        TODO: this styling doesn't work very well-->
+<!--
         {{#ionList}} 
           <form>
             <label class="item item-input item-stacked-label">
@@ -58,6 +60,7 @@
               </div>
           </form>
         {{/ionList}}
+-->
       </div>
     {{/ionContent}}
   {{/ionView}}

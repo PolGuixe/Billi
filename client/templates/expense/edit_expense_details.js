@@ -16,23 +16,35 @@ Template.editExpenseDetails.helpers({
 });
 
 Template.editExpenseDetails.events({
-  'submit form':function(e){
-     e.preventDefault();
-    
-    var expense = {
-      userId: this.userId,
-//      author: user.username,
-      submitted: new Date(),
-      merchant:$(e.target).find('[name=merchant]').val(),
-      amount: $(e.target).find('[name=amount]').val(),
-      date: $(e.target).find('[name=date]').val(), //TODO: use a date object.
-      location: $(e.target).find('[name=location]').val(),
-      paymentMethod: $(e.target).find('[name=method]').val(),
-      category: $(e.target).find('[name=category]').val()
-    };
-    
-    Expenses.insert(expense);
-    
-    Router.go('/expenses');
+//  'submit form':function(e){
+//     e.preventDefault();
+//    
+//    var expense = {
+//      userId: this.userId,
+////      author: user.username,
+//      submitted: new Date(),
+//      merchant:$(e.target).find('[name=merchant]').val(),
+//      amount: $(e.target).find('[name=amount]').val(),
+//      date: $(e.target).find('[name=date]').val(), //TODO: use a date object.
+//      location: $(e.target).find('[name=location]').val(),
+//      paymentMethod: $(e.target).find('[name=method]').val(),
+//      category: $(e.target).find('[name=category]').val()
+//    };
+//    
+//    Expenses.insert(expense);
+//    
+//    Router.go('/expenses');
+//  }
+});
+
+AutoForm.hooks({
+  'expense-new-form': {
+    onSuccess: function (operation, result, template) {
+      Router.go('/expenses');
+    },
+
+    onError: function(operation, error, template) {
+      alert(error);
+    }
   }
 });

@@ -3,7 +3,7 @@
   {{#ionItem iconLeft=true iconRight=true}} 
 <!--  TODO: picture thumbnail-->
     <h2>{{merchant}}</h2>
-    <p>{{amount}}</p>
+    <p>{{amount.number}} {{amount.currency}}</p>
     <span class="item-category">
       {{>ionIcon icon="{{categoryIcon}}"}}
       {{category}}
