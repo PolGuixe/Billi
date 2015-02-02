@@ -10,7 +10,7 @@
   {{/contentFor}}
   
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-left button-positive" data-action="new-expense">
+    <button class="button button-clear pull-right button-positive" data-action="export">
       {{> ionIcon icon='ios-upload-outline'}}
     </button>
   {{/contentFor}}
@@ -18,7 +18,7 @@
   {{#ionView}}
     {{#ionContent}}
       {{#each expenses}}
-        {{>expense}}
+        {{>expenseItem}}
       {{/each}}
     {{/ionContent}}
   {{/ionView}}
