@@ -1,0 +1,24 @@
+<template name="expenseShow">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton text=false}}
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Details</h1>
+  {{/contentFor}}
+  
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action = "edit" path = >
+      {{> ionIcon icon='edit'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#with expense}}
+        {{merchant}}
+      {{/with}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

@@ -1,6 +1,6 @@
-<template name="expense">
+<template name="expenseItem">
 <!--  {{#with expense}} TODO: check this??-->
-  {{#ionItem iconLeft=true iconRight=true}} 
+  {{#ionItem path="expenseShow" iconLeft=true iconRight=true}} 
 <!--  TODO: picture thumbnail-->
     <h2>{{merchant}}</h2>
     <p>{{amount.number}} {{amount.currency}}</p>
