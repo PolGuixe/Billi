@@ -1,7 +1,3 @@
 <template name="expenseEdit">
-  {{#ionView}}
-    {{#ionContent}}
-      {{> quickForm collection="Expenses"  doc=expense id="expense-new-form" type="edit" omitFields="createdBy,createdAt" buttonContent="Save"}}
-    {{/ionContent}}
-  {{/ionView}}
+  {{#ionModal title="Edit Expense"}} {{> quickForm collection="Expenses" doc=expense id="expense-edit-form" type="update" omitFields="createdBy,createdAt" buttonContent="Save"}} {{/ionModal}}
 </template>

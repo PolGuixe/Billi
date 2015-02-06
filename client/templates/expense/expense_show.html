@@ -8,7 +8,7 @@
   {{/contentFor}}
   
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action = "edit" path = >
+    <button class="button button-clear pull-right button-positive" data-ion-modal="expenseEdit" data-id={{expense._id}}>
       {{> ionIcon icon='edit'}}
     </button>
   {{/contentFor}}
