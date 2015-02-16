@@ -24,6 +24,8 @@ meteoric:ionic-sass
 meteoric:ionicons-sass
 useraccounts:ionic
 meteoric:autoform-ionic
-aldeed:autoform
 aldeed:simple-schema
 aldeed:collection2
+momentjs:moment
+aldeed:autoform
+fourseven:scss

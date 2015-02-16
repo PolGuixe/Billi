@@ -1,12 +1,18 @@
 <template name="expenseItem">
-<!--  {{#with expense}} TODO: check this??-->
-  {{#ionItem path="expenseShow" iconLeft=true iconRight=true}} 
-<!--  TODO: picture thumbnail-->
-    <h2>{{merchant}}</h2>
-    <p>{{amount.number}} {{amount.currency}}</p>
-    <span class="item-category">
-      {{>ionIcon icon="{{categoryIcon}}"}}
-      {{category}}
-    </span>
+  <!--  {{#with expense}} TODO: check this??-->
+  {{#ionItem path="expenseShow" iconLeft=true iconRight=true}}
+  <!--  TODO: picture thumbnail-->
+    <div class="item-category">
+      <i class={{categoryIcon}}></i>
+    </div>
+
+    <div class="item-center">
+      <h2>{{location}}</h2>
+      <p>{{dateWithFormat}}</p>
+    </div> 
+    
+    <div class="item-price">
+      {{amount.number}}{{currencySymbol}}
+    </div>
   {{/ionItem}}
 </template>
