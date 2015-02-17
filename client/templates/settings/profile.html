@@ -1,0 +1,21 @@
+<template name="profile">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton text=false}}
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{username}}</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pill-right button-positive" data-ion-modal="profileEdit">
+      {{>ionIcon icon="edit"}}
+    </button>
+  {{/contentFor}}
+  
+  {{#ionView}}
+    {{#ionContent}}
+  userprofile
+    {{/ionContent}}
+  {{/ionView}}
+</template>

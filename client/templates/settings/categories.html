@@ -1,0 +1,15 @@
+<template name="categories">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton text=false}}
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Categories</h1>
+  {{/contentFor}}
+  
+  {{#ionView}}
+    {{#ionContent}}
+      categories
+    {{/ionContent}}
+  {{/ionView}}
+</template>
