@@ -10,14 +10,14 @@
 <!--  TODO: check how to change the style of the tabs-->
         {{#if isAndroid}}
           {{#ionTabs style="android"}}
-            {{> ionTab title="Add Expense" path="takePicture" icon="plus"}}
             {{> ionTab title="Expenses" path="expensesList" icon="filing"}}
+            {{> ionTab title="Add Expense" path="takePicture" icon="android-camera"}} 
             {{> ionTab title="Profile" path="profile" icon="android-person"}}
           {{/ionTabs}}
         {{else}}
           {{#ionTabs style="ios"}}
-            {{> ionTab title="Add Expense" path="takePicture" icon="plus"}}
             {{> ionTab title="Expenses" path="expensesList" icon="filing"}}
+            {{> ionTab title="Add Expense" path="takePicture" icon="ios-camera"}}
             {{> ionTab title="Settings" path="settings" icon="ios-gear"}} 
           {{/ionTabs}}
         {{/if}}
