@@ -16,7 +16,12 @@
   {{#ionView}}
     {{#ionContent}}
   userprofile
-  {{> quickForm collection="Meteor.users" doc=user id="user-profile-form" type="update" omitFields="emails,createdAt, services"}}
+    {{#autoForm collection="Meteor.users" doc=user id="user-profile-form" type="update" }}
+      <fieldSet>
+        {{> afQuickField name='firstName'}}
+      </fieldSet>
+      <button type="submit" class="button button-positive">Save</button>
+    {{/autoForm}}
     {{/ionContent}}
   {{/ionView}}
 </template>
