@@ -9,6 +9,6 @@ Template.profile.helpers({
     return username;
   },
   user: function(){
-    return Meteor.user();
+    return Meteor.userId;
   }
 });
