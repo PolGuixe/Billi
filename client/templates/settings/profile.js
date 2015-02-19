@@ -7,5 +7,8 @@ Template.profile.helpers({
       username = Meteor.user().emails[0].address;
     }
     return username;
+  },
+  user: function(){
+    return Meteor.userId;
   }
 });
