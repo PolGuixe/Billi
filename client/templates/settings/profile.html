@@ -15,8 +15,7 @@
   
   {{#ionView}}
     {{#ionContent}}
-  userprofile
-  {{> quickForm collection="Meteor.users" doc=user id="user-profile-form" type="update" omitFields="emails,createdAt, services"}}
+      {{> quickForm collection="Meteor.users" doc=user id="user-profile-form" type="update" omitFields="emails,createdAt,services,categories"}}
     {{/ionContent}}
   {{/ionView}}
 </template>
