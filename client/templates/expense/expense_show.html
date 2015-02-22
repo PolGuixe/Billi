@@ -16,7 +16,20 @@
   {{#ionView}}
     {{#ionContent}}
       {{#with expense}}
-        {{merchant}}
+        {{#ionItem}}
+          <div class="to-left">
+            <h2><i class={{categoryIcon}}></i></h2>
+          </div>
+          <h2>{{category}}</h2>
+          <div class="to-right">
+            <h2>{{amount.number}} {{currencySymbol}} </h2>
+          </div>
+        {{/ionItem}}
+        {{#ionItem}}
+          <p>Merchant: {{merchant}}</p>
+          <p>Location: {{location}}</p>
+          <p>Date: {{dateWithFormat}}</p>
+        {{/ionItem}}
       {{/with}}
     {{/ionContent}}
   {{/ionView}}

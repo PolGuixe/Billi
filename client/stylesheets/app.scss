@@ -1,5 +1,15 @@
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+
+
+.to-left{
+  float:left;
+}
+
+.to-right{
+  float: right;
+}
+
 .take-picture {
   text-align: center;
   vertical-align: middle;
