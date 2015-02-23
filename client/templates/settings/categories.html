@@ -9,7 +9,7 @@
   
   {{#ionView}}
     {{#ionContent}}
-      {{> quickForm collection="settings" doc=user id="user-categories-form" type="update" omitFields="emails,createdAt,services,profile.firstName,profile.lastName,profile.NIF,profile.organitzation,profile.department,profile.position,profile.phone"}}
+      {{> quickForm collection="UserSettings" doc=user id="user-categories-form" type="update" buttonContent="Save" omitFields="belongsTo, importSettings"}}
     {{/ionContent}}
   {{/ionView}}
 </template>
