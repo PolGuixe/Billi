@@ -1,4 +1,4 @@
-<template name="profile">
+<template name="profileShow">
   {{#contentFor "headerButtonLeft"}}
     {{>ionNavBackButton text=false}}
   {{/contentFor}}
@@ -8,14 +8,14 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pill-right button-positive" data-ion-modal="profileEdit">
+    <button class="button button-clear pull-right button-positive" data-ion-modal="profileEdit">
       {{>ionIcon icon="edit"}}
     </button>
   {{/contentFor}}
   
   {{#ionView}}
     {{#ionContent}}
-      {{> quickForm collection="Meteor.users" doc=user id="user-profile-form" type="update" omitFields="emails,createdAt,services,categories"}}
+      {{> quickForm collection="Meteor.users" doc=user id="user-profile-read" type="readonly" omitFields="emails,createdAt,services,categories"}}
     {{/ionContent}}
   {{/ionView}}
 </template>

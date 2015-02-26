@@ -1,4 +1,4 @@
-Template.profile.helpers({
+Template.profileShow.helpers({
   username: function () {
     var username;
     if (Meteor.user().profile.firstName && Meteor.user().profile.lastName) {
