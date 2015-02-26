@@ -1,4 +1,4 @@
-Template.profile.helpers({
+Template.settings.helpers({
   username: function () {
     var username;
     if (Meteor.user().profile.firstName && Meteor.user().profile.lastName) {
@@ -7,8 +7,12 @@ Template.profile.helpers({
       username = Meteor.user().emails[0].address;
     }
     return username;
-  },
-  user: function(){
-    return Meteor.user();
+  }
+});
+
+Template.settings.events({
+  'click [data-action="logOut"]':function(){
+    AccountsTemplates.logout();
+    console.log('logOut');
   }
 });

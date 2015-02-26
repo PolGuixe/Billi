@@ -1,6 +1,6 @@
 <template name="settings">
   {{#contentFor "headerTitle"}}
-    <h1 class="title">Your Name</h1>
+    <h1 class="title">{{username}}</h1>
   {{/contentFor}}
 
   {{#ionView}}
@@ -15,7 +15,7 @@
         
         {{#ionItem path="profile" iconLeft=true iconRight=true}}
           {{>ionIcon icon="ios-person-outline"}}
-          User Profile
+            {{username}}'s Profile
           {{>ionIcon icon="ios-arrow-right"}}
         {{/ionItem}}
         
@@ -38,6 +38,13 @@
         {{/ionItem}}
   
       {{/ionList}}
+      <div class="padding">
+        <button class="button button-block button-light" data-action="logOut">Log Out</button>    
+      </div>
+  
     {{/ionContent}}
   {{/ionView}}
+  
+  
+
 </template>
