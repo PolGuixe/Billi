@@ -17,7 +17,15 @@
         {{#autoForm collection="Expenses" id="expense-new-form" type="insert"}}
           
             {{#each field}}
-              {{> afQuickField name=this}}
+              {{#if isDate this}}
+                {{> afFieldInput name=this type="datetime-local" value=date}}
+                {{else}}
+                  {{#if isLocation this}}
+                    {{> afQuickField name=this value='Barcelona'}}
+                    {{else}}
+                      {{> afQuickField name=this}}
+                  {{/if}}
+              {{/if}}
             {{/each}}
           
         <div class="padding">

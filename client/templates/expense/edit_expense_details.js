@@ -18,17 +18,25 @@ Template.editExpenseDetails.helpers({
   },
   date: function () {
     var now = new Date().getTime();
-    return Date(now).toString(); //TODO: Use moment or a datepicker
+    console.log(moment(now).format('YYYY-MM-DD hh:mm'));
+    return moment(now).format('YYYY-MM-DD') + 'T' + moment(now).format('hh:mm'); //TODO:add datepicker
   },
   location: function () {
-    var latLon = Geolocation.latLng();
-    return 'Lat: ' + latLon.lat + ', Lon: ' + latLon.lng;
+//    var latLon = Geolocation.latLng();
+//    return 'Lat: ' + latLon.lat + ', Lon: ' + latLon.lng;
+    return 'Barcelona';
   },
   amount: function () {
     return '$10';
   },
   image: function () {
     return Session.get('image');
+  },
+  isDate: function(field){
+    return field === "date";
+  },
+  isLocation: function(field){
+    return field === "location";
   }
 });
 
