@@ -4,7 +4,7 @@ Template.editExpenseDetails.helpers({
       belongsTo: Meteor.user()._id
     });
     var trueFields = [];
-    
+
     allFields = allFields.importSettings;
     console.log(allFields);
 
@@ -12,7 +12,7 @@ Template.editExpenseDetails.helpers({
       if (values)
         trueFields.push(keys);
     });
-    
+
     console.log(trueFields);
     return trueFields;
   },
@@ -21,9 +21,28 @@ Template.editExpenseDetails.helpers({
     console.log(moment(now).format('YYYY-MM-DD hh:mm'));
     return moment(now).format('YYYY-MM-DD') + 'T' + moment(now).format('hh:mm'); //TODO:add datepicker
   },
+  categories: function () {
+    var allCategories = UserSettings.findOne({
+      belongsTo: Meteor.user()._id
+    });
+    allCategories = allCategories.expenseCategories;
+
+    var trueCategories = [];
+
+    _.each(allCategories, function (values, keys) {
+      console.log(keys + ' :' + values);
+      if (values)
+        trueCategories.push({
+          value: keys,
+          label: keys.charAt(0).toUpperCase() + keys.substring(1)
+        });
+    });
+    console.log(trueCategories);
+    return trueCategories;
+  },
   location: function () {
-//    var latLon = Geolocation.latLng();
-//    return 'Lat: ' + latLon.lat + ', Lon: ' + latLon.lng;
+    //    var latLon = Geolocation.latLng();
+    //    return 'Lat: ' + latLon.lat + ', Lon: ' + latLon.lng;
     return 'Barcelona';
   },
   amount: function () {
@@ -32,10 +51,13 @@ Template.editExpenseDetails.helpers({
   image: function () {
     return Session.get('image');
   },
-  isDate: function(field){
+  isCategory: function (field) {
+    return field === "category";
+  },
+  isDate: function (field) {
     return field === "date";
   },
-  isLocation: function(field){
+  isLocation: function (field) {
     return field === "location";
   }
 });
