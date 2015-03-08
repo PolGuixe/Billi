@@ -1,3 +1,38 @@
+
+Template.editExpenseDetails.rendered = function () {
+  Session.set('city', 'Locating...');
+  var findCity = function (latlng) {
+      HTTP.get('https://maps.googleapis.com/maps/api/geocode/json?', {
+        params: {
+          latlng: latlng,
+          result_type: 'locality',
+          key: 'AIzaSyCrGqF9FvSp55HqvsMTq1ZRdCMjzAB4iQM'
+        }
+      }, function (error, result) {
+        if (error) {
+          console.log('Error!');
+          console.log(error);
+        } else {
+          city = _.find(result.data.results[0], function (value, key) {
+            if (key == 'formatted_address')
+              return value;
+          });
+          Session.set('city',city);
+        }
+      });
+    } // function to call when Geolocation is ready
+
+  Tracker.autorun(function (computation) {
+    if (Geolocation.latLng()) {
+      var latLon = Geolocation.latLng();
+
+      console.log(String(latLon.lat) + ',' + String(latLon.lng));
+      findCity(String(latLon.lat) + ',' + String(latLon.lng));
+      computation.stop();
+    }
+  });
+};
+
 Template.editExpenseDetails.helpers({
   field: function () {
     var allFields = UserSettings.findOne({
@@ -6,20 +41,13 @@ Template.editExpenseDetails.helpers({
     var trueFields = [];
 
     allFields = allFields.importSettings;
-    console.log(allFields);
 
     _.each(allFields, function (values, keys) {
       if (values)
         trueFields.push(keys);
     });
 
-    console.log(trueFields);
     return trueFields;
-  },
-  date: function () {
-    var now = new Date().getTime();
-    console.log(moment(now).format('YYYY-MM-DD hh:mm'));
-    return moment(now).format('YYYY-MM-DD') + 'T' + moment(now).format('hh:mm'); //TODO:add datepicker
   },
   categories: function () {
     var allCategories = UserSettings.findOne({
@@ -30,20 +58,20 @@ Template.editExpenseDetails.helpers({
     var trueCategories = [];
 
     _.each(allCategories, function (values, keys) {
-      console.log(keys + ' :' + values);
       if (values)
         trueCategories.push({
           value: keys,
           label: keys.charAt(0).toUpperCase() + keys.substring(1)
         });
     });
-    console.log(trueCategories);
     return trueCategories;
   },
+  date: function () {
+    var now = new Date().getTime();
+    return moment(now).format('YYYY-MM-DD') + 'T' + moment(now).format('hh:mm'); //TODO:add datepicker
+  },
   location: function () {
-    //    var latLon = Geolocation.latLng();
-    //    return 'Lat: ' + latLon.lat + ', Lon: ' + latLon.lng;
-    return 'Barcelona';
+    return Session.get('city');
   },
   amount: function () {
     return '$10';
@@ -61,8 +89,6 @@ Template.editExpenseDetails.helpers({
     return field === "location";
   }
 });
-
-Template.editExpenseDetails.events({});
 
 AutoForm.hooks({
   'expense-new-form': {

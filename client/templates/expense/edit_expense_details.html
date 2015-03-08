@@ -24,7 +24,7 @@
                   {{> afFieldInput name=this type="datetime-local" value=date}}
                   {{else}}
                     {{#if isLocation this}}
-                      {{> afQuickField name=this value='Barcelona'}}
+                      {{> afQuickField name=this value=location}}
                       {{else}}
                         {{> afQuickField name=this}}
                     {{/if}}
