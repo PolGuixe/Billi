@@ -93,6 +93,8 @@ Template.editExpenseDetails.helpers({
 AutoForm.hooks({
   'expense-new-form': {
     onSuccess: function (operation, result, template) {
+      Expenses.update({_id:result},{$set: {image:Session.get('image')}});
+      
       Router.go('/expenses');
     },
 
