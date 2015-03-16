@@ -16,6 +16,11 @@
   {{#ionView}}
     {{#ionContent}}
       {{#with expense}}
+        <div class="edit-expense-details">
+        <div class="image-top">
+          <img src={{image}}>
+        </div>
+        </div>
         {{>expenseItem}}
         {{#ionItem}}
           Taxes paid: {{tax}}
