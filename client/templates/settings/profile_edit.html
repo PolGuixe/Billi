@@ -1,5 +1,5 @@
 <template name="profileEdit">
   {{#ionModal title="Edit Profile"}}
-    {{> quickForm collection="Meteor.users" doc=user id="user-profile-edit" type="update"  omitFields="emails,createdAt,services,categories"}}
+    {{> quickForm collection="Meteor.users" doc=user id="user-profile-edit" type="update"  omitFields="emails,createdAt,services"}}
   {{/ionModal}}
 </template>
