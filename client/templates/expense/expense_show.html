@@ -1,0 +1,35 @@
+<template name="expenseShow">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton text=false}}
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Details</h1>
+  {{/contentFor}}
+  
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-ion-modal="expenseEdit" data-id={{expense._id}}>
+      {{> ionIcon icon='edit'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#with expense}}
+        <div class="edit-expense-details">
+        <div class="image-top">
+          <img src={{image}}>
+        </div>
+        </div>
+        {{>expenseItem}}
+        {{#ionItem}}
+          Taxes paid: {{tax}}
+        {{/ionItem}}
+        {{#ionItem}}
+          Payment Method: {{paymentMethod}}
+        {{/ionItem}}
+      {{/with}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

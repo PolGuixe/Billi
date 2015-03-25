@@ -5,15 +5,10 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
 underscore
-less
-twbs:bootstrap
 accounts-password
 iron:router
-useraccounts:bootstrap
-pcel:loading
 mdg:camera
 mdg:geolocation
 mdg:reload-on-resume
@@ -23,3 +18,14 @@ meteorhacks:npm
 npm-container
 jonblum:jquery-cropper
 nerdmed:camanjs
+meteoric:ionic
+meteoric:ionic-sass
+meteoric:ionicons-sass
+useraccounts:ionic
+meteoric:autoform-ionic
+aldeed:simple-schema
+aldeed:collection2
+momentjs:moment
+aldeed:autoform
+http
+polguixe:billi

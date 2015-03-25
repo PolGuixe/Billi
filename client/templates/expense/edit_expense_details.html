@@ -1,0 +1,42 @@
+<template name="editExpenseDetails">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton text=false}}
+<!--    Also accepts classes e.g. class="button-positive"-->
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Edit Expense Details</h1>
+  {{/contentFor}}
+  
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="edit-expense-details">
+        <div class="image-top">
+          <img src={{image}}>
+        </div>
+        {{#autoForm collection="Expenses" id="expense-new-form" type="insert"}}
+          
+            {{#each field}}
+              {{#if isCategory this}}
+                {{> afQuickField name=this options=categories}}
+              {{else}}
+                {{#if isDate this}}
+                  {{> afFieldInput name=this type="datetime-local" value=date}}
+                  {{else}}
+                    {{#if isLocation this}}
+                      {{> afQuickField name=this value=location}}
+                      {{else}}
+                        {{> afQuickField name=this}}
+                    {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/each}}
+          
+        <div class="padding">
+          <button type="submit" class="button button-positive button-block">Save Expense</button>
+        </div>
+        {{/autoForm}}
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+</template>

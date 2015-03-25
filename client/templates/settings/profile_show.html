@@ -1,0 +1,21 @@
+<template name="profileShow">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton text=false}}
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{username}}</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-ion-modal="profileEdit">
+      {{>ionIcon icon="edit"}}
+    </button>
+  {{/contentFor}}
+  
+  {{#ionView}}
+    {{#ionContent}}
+      {{> quickForm collection="Meteor.users" doc=user id="user-profile-read" type="readonly" omitFields="emails,createdAt,services,categories"}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

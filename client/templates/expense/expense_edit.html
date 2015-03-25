@@ -1,0 +1,4 @@
+<template name="expenseEdit">
+  {{#ionModal title="Edit Expense"}} 
+    {{> quickForm collection="Expenses" doc=expense id="expense-edit-form" type="update" omitFields="createdBy,createdAt" buttonContent="Save"}}           {{/ionModal}}
+</template>

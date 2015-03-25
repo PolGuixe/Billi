@@ -1,0 +1,15 @@
+<template name="categories">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton text=false}}
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Categories</h1>
+  {{/contentFor}}
+  
+  {{#ionView}}
+    {{#ionContent}}
+      {{> quickForm collection="UserSettings" doc=user id="user-categories-form" type="update" buttonContent="Save" omitFields="belongsTo, importSettings"}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>
