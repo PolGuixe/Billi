@@ -26,6 +26,6 @@ meteoric:autoform-ionic
 aldeed:simple-schema
 aldeed:collection2
 momentjs:moment
-aldeed:autoform
 http
 polguixe:billi
+aldeed:autoform
